@@ -10,23 +10,34 @@ public class StartGameManager : MonoBehaviour
     public GameObject pauseButton;
     public GameObject leaderboardButton;
     public GameObject achievementsButton;
+    private UnityAdsManager unityAdManager;
+    private GoogleAdMobManager adMobManager;
+    private CombinedAdManager combinedAdManager;
+    private GameObject adManager;
+    int random;
     // Start is called before the first frame update
     void Start()
     {
-        
+        adManager = GameObject.FindGameObjectWithTag("Ad_Manager");
+        unityAdManager = adManager.GetComponent<UnityAdsManager>();
+        adMobManager = adManager.GetComponent<GoogleAdMobManager>();
+        combinedAdManager = adManager.GetComponent<CombinedAdManager>();
+
+        //combinedAdManager.showRandomBanner();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.touchCount > 1)
+        if (Input.touchCount > 1)
         {
             StartGame();
             tapToPlayText.enabled = false;
             pauseButton.SetActive(true);
             leaderboardButton.SetActive(false);
             achievementsButton.SetActive(false);
-            UnityAdsManager.Instance.HideBannerAd();
+            //UnityAdsManager.Instance.HideBannerAd();
             //rewardedText.enabled = false;
             Time.timeScale = 1;
 
@@ -34,10 +45,12 @@ public class StartGameManager : MonoBehaviour
 
         else
         {
+
             tapToPlayText.enabled = true;
             pauseButton.SetActive(false);
-            UnityAdsManager.Instance.PlayBannerAd();
             leaderboardButton.SetActive(true);
+
+            //CombinedAdManager.Instance.showRandomBanner(random);
             achievementsButton.SetActive(true);
             Time.timeScale = 0;
 

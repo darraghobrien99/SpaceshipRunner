@@ -14,13 +14,14 @@ public class UnityAdsManager : MonoBehaviour, IUnityAdsListener
     private string Banner_Ad_ID = "bannerAd";
     private string Interstitial_Ad_ID = "interstitialAd";
     public static UnityAdsManager Instance;
+  
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
         Advertisement.AddListener(this);
-        Advertisement.Initialize(GooglePlay_ID, TestMode); 
+        Advertisement.Initialize(GooglePlay_ID, TestMode);
 
         Instance = this;
     }
@@ -28,11 +29,12 @@ public class UnityAdsManager : MonoBehaviour, IUnityAdsListener
 
     public void DisplayInterstitialAd()
     {
-        if (!Advertisement.IsReady(Interstitial_Ad_ID))
+        if (Advertisement.IsReady(Interstitial_Ad_ID))
         {
-            GoogleAdMobManager.Instance.RequestInterstitial();
+            Advertisement.Show(Interstitial_Ad_ID);
         }
-        Advertisement.Show(Interstitial_Ad_ID);
+        
+        GoogleAdMobManager.Instance.RequestInterstitial();
     }
 
     public void DisplayVideoAd()
@@ -45,12 +47,11 @@ public class UnityAdsManager : MonoBehaviour, IUnityAdsListener
         // Check if UnityAds ready before calling Show method:
         if (Advertisement.IsReady(rewarded_Ad_ID))
         {
+            
             Advertisement.Show(rewarded_Ad_ID);
         }
-        else
-        {
-            GoogleAdMobManager.Instance.RequestRewardBasedVideo();
-        }
+        GoogleAdMobManager.Instance.RequestRewardBasedVideo();
+
     }
 
     public void PlayBannerAd()
@@ -62,6 +63,7 @@ public class UnityAdsManager : MonoBehaviour, IUnityAdsListener
     {
         if (!Advertisement.isInitialized)
         {
+
             yield return new WaitForSeconds(0.5f);
         }
         Advertisement.Banner.SetPosition(BannerPosition.BOTTOM_CENTER);

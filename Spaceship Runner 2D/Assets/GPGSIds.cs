@@ -24,9 +24,10 @@
 
 public static class GPGSIds
 {
-        public const string achievement_reached_100 = "CggI0pD3zSgQAhAD"; // <GPGSID>
+        public const string achievement_reached_200 = "CggI0pD3zSgQAhAE"; // <GPGSID>
+        public const string achievement_reached_500 = "CggI0pD3zSgQAhAF"; // <GPGSID>
         public const string leaderboard_high_score = "CggI0pD3zSgQAhAB"; // <GPGSID>
-        public const string achievement_hey_there = "CggI0pD3zSgQAhAC"; // <GPGSID>
+        public const string achievement_reached_100 = "CggI0pD3zSgQAhAD"; // <GPGSID>
 
 }
 

@@ -26,9 +26,19 @@ public class DistanceManager : MonoBehaviour
         kmTravelled += Time.deltaTime * 5;
         kmText.text = (int)kmTravelled + "KM";
 
-        if (kmTravelled > 100)
+        if (kmTravelled == 100)
         {
             PlayServicesManager.Instance.reachedOneHundred();
+        }
+
+        if (kmTravelled == 200)
+        {
+            PlayServicesManager.Instance.reachedTwoHundred();
+        }
+
+        if (kmTravelled == 500)
+        {
+            PlayServicesManager.Instance.reachedFiveHundred();
         }
     }
 
@@ -39,7 +49,7 @@ public class DistanceManager : MonoBehaviour
 
     public bool CheckNewHighScore()
     {
-        if((int)kmTravelled > PlayerPrefs.GetInt("prefKM"))
+        if ((int)kmTravelled > PlayerPrefs.GetInt("prefKM"))
         {
             //new high score
             PlayerPrefs.SetInt(prefKM, (int)kmTravelled);
@@ -60,6 +70,6 @@ public class DistanceManager : MonoBehaviour
         Debug.Log("Added to score");
         bool isNewHighScore = CheckNewHighScore();
 
-    
+
     }
 }

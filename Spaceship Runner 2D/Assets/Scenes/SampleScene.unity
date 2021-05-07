@@ -1569,6 +1569,9 @@ GameObject:
   - component: {fileID: 1542861158}
   - component: {fileID: 1542861159}
   - component: {fileID: 1542861160}
+  - component: {fileID: 1542861163}
+  - component: {fileID: 1542861162}
+  - component: {fileID: 1542861161}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1670,6 +1673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128beeea05a456b4ab357d2028c18898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: 0
 --- !u!114 &1542861160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1680,6 +1684,42 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2bb26b80a5909845897b5e3afc795f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1542861161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542861153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e684a0babe83b374fad66ec0feb75cfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1542861162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542861153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32410c92c202b6a4e9ebb78a14b39776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1542861163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542861153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a20947267da234995663905f464bc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1593878961
@@ -2182,9 +2222,10 @@ GameObject:
   - component: {fileID: 1733256684}
   - component: {fileID: 1733256683}
   - component: {fileID: 1733256685}
+  - component: {fileID: 1733256686}
   m_Layer: 0
   m_Name: AdsManager
-  m_TagString: Untagged
+  m_TagString: Ad_Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2225,6 +2266,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e684a0babe83b374fad66ec0feb75cfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1733256686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733256682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a20947267da234995663905f464bc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1839374507

@@ -22,7 +22,7 @@ public class PlayServicesManager : MonoBehaviour
 
     public void updateLeaderboard()
     {
-        if(PlayerPrefs.GetInt("prefKM") > 0)
+        if (PlayerPrefs.GetInt("prefKM") > 0)
         {
             Social.ReportScore(PlayerPrefs.GetInt("prefKM"), GPGSIds.leaderboard_high_score, null);
         }
@@ -31,5 +31,15 @@ public class PlayServicesManager : MonoBehaviour
     public void reachedOneHundred()
     {
         Social.ReportProgress(GPGSIds.achievement_reached_100, 100f, null);
+    }
+
+    public void reachedTwoHundred()
+    {
+        Social.ReportProgress(GPGSIds.achievement_reached_200, 100f, null);
+    }
+
+    public void reachedFiveHundred()
+    {
+        Social.ReportProgress(GPGSIds.achievement_reached_500, 100f, null);
     }
 }
